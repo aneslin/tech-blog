@@ -1,7 +1,7 @@
 const express = require('express');
 const sequelize = require('./config/connection')
 const routes = require('./controllers')
-const exphbs = require ('express-handlebars')
+//const exphbs = require ('express-handlebars')
 //const hbs = exphbs.create( { helpers } )
 const session = require ('express-session')
 const app = express();
@@ -14,7 +14,7 @@ const sess = {
   resave: false,
   saveUninitialized: true,
   rolling: true,
-  maxAge = 20000,
+  //maxAge = 20000,
   store: new SequelizeStore({
     db: sequelize
   })

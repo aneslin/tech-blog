@@ -11,11 +11,11 @@ Post.init(
       primaryKey: true,
       autoIncrement: true,
     },
-    title: {
+    post_title: {
       type: DataTypes.STRING,
       allowNull: false,
     },
-    content: {
+    post_content: {
       type: DataTypes.STRING,
     },
     user_id: {
