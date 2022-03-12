@@ -33,14 +33,14 @@ router.post('/', (req, res) => {
 //login route
 router.post("/login", (req, res) => {
   User.findOne({
-    where: { email: req.body.email },
+    where: { username: req.body.username },
   })
     .then((dbUserData) => {
-      console.log("db-user-datea ====>" , dbUserData)
+      
       if (!dbUserData) {
-        res.status(400).json({ message: "no user with that email address" });
+        res.status(400).json({ message: "no user with that user name" });
         return;
-      }
+      }console.log(req.body)
       const validPassword = dbUserData.checkPassword(req.body.password);
       if (!validPassword) {
         res.status(400).json({ message: " incorrect password" });
@@ -48,7 +48,7 @@ router.post("/login", (req, res) => {
       }
       req.session.save(() => {
         req.session.user_id = dbUserData.id;
-        req.session.email = dbUserData.email;
+        req.session.username = dbUserData.username;
         req.session.loggedIn = true;
 
         res.json({ user: dbUserData, message: "you are now logged in" });
