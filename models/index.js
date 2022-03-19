@@ -11,17 +11,7 @@ Post.belongsTo(User,{
     foreignKey: 'user_id'
 })
 
-User.belongsToMany(Post, {
-    through: Comment,
-    as: 'post_comments',
-    foreignKey: 'user_id'
-})
 
-Post.belongsToMany(User, {
-    through: Comment,
-    as: 'post_comments',
-    foreignKey: 'post_id'
-})
 
 Post.hasMany(Comment, {
     foreignKey: 'post_id'
