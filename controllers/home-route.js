@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const { Post, User } = require("../models");
+const { Post, User, Comment } = require("../models");
 
 router.get("/", (req, res) => {
   console.log(req.session);
@@ -34,7 +34,7 @@ router.get("/signup", (req, res) => {
   res.render("signup");
 });
 
-router.get("/post/id", (req, res) => {
+router.get("/post/:id", (req, res) => {
   Post.findOne({
     where: {
       id: req.params.id,
@@ -62,7 +62,7 @@ router.get("/post/id", (req, res) => {
     }
     //serialize data
     const post = dbPostData.get({ plain: true });
-    res.render("single-post", {
+    res.render("singlepost", {
        post, loggedIn: req.session.loggedIn });
   })
   .catch((err) => {
