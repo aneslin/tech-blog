@@ -1,8 +1,15 @@
+
 <div>
 {{#each posts as |post|}}
-
-<h4>{{post.post_title}}</h4>
+<div class = "card">
+    <div class="card-body">
+        <div class="card-title">
+<h4><a href='/post/{{post.id}}'> {{post.post_title}} </a></h4>
+</div>
 <p>{{post.post_content}}</p>
+</div>
+</div>
+
 {{/each}}
 
 
