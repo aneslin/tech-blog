@@ -5,10 +5,13 @@ const { Comment } = require('../../models')
 router.post("/", (req, res) => {
     if (req.session) {
         Comment.create({
+            post_id: req.body.post_id,
             comment_content : req.body.comment_content,
-            user_id : req.session.user_id,
-            post_id: req.body.post_id
-        }).then(dbCommentData => res.json(dbCommentData))
+            user_id : req.session.user_id
+            
+        }).then(dbCommentData =>{
+            console.log(dbCommentData)
+            res.json(dbCommentData)})
         .catch(err => {
           console.log(err);
           res.status(400).json(err);

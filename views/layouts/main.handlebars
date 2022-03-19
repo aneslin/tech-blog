@@ -11,22 +11,22 @@
 
     <title>Tech Blog</title>
 </head>
-<body class = "bg-light">
+<body class = "bg-light min-vh-100">
 
-<header class = "container-fluid" >
+<header class = "container-fluid " >
 
    
 <div class = "row bg-secondary pb-2">
   <h1 class="text-info">Tech Today</h1> 
 <nav>
    <ul class = "nav justify-content-end">
-     <li class="nav-item  px-2 "> <button  class = "btn btn-link btn-warning" href="/">Home</button></li> 
+     <li class="nav-item  px-2 "> <a  class = "btn btn-link btn-warning" href="/">Home</a></li> 
   {{#if loggedIn}}
  
-   <li class="nav-item  px-2 "> <button  class = "btn btn-link btn-warning" href="/dashboard">Dashboard</button></li> 
+   <li class="nav-item  px-2 "> <a  class = "btn btn-link btn-warning" href="/dashboard">Dashboard</a></li> 
     
     
-    <li class="nav-item  px-2 "><button id = "logout" class = "btn btn-warning">logout</button></li>
+    <li class="nav-item  px-2 "><a id = "logout" class = "btn btn-warning">logout</a></li>
     {{else}}
     <li class ="nav-item   px-2"><button class="btn btn-link btn-warning" href ="/login">Login</button></li>
     

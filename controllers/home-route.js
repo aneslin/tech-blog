@@ -39,7 +39,7 @@ router.get("/post/:id", (req, res) => {
     where: {
       id: req.params.id,
     },
-    attributes: ["id", "post_title", "post_content"],
+    attributes: ["id", "post_title", "post_content", "created_at"],
     include: [
       {
         model: Comment,
@@ -62,6 +62,7 @@ router.get("/post/:id", (req, res) => {
     }
     //serialize data
     const post = dbPostData.get({ plain: true });
+  
     res.render("singlepost", {
        post, loggedIn: req.session.loggedIn });
   })

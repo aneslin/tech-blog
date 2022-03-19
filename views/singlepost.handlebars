@@ -1,23 +1,39 @@
 <article>
     <div class="card">
         <div class="card-body">
+            
             <div class="card-title">
                <h3> {{post.post_title}}</h3>
             </div>
             <div class="container">
                 <div class="row">
-                <div class="card-text col-10">
+                <div class="card-text col-9">
                     {{post.post_content}}
                     </div>
-                   <div class="card-text col-2">
-                       {{post.user.username}}
+                   <div class="card-text col-3">
+                       {{post.user.username}} on {{post.created_at}}
                    </div>
 
                 </div>
+                <div class="card-title">
+                <h4>comments</h4>
+                 </div>
+                <div class="card-text">
+
+                    <!-- comment text here -->
+                </div>
+                <form class = "mt-3 comments">
+                    <label for="comment_box" class="form-label"> Post a new comment</label>
+                    <textarea class = "form-control" id="comment_box" rows="3"></textarea>
+                    <button type="submit" class="btn btn-primary mt-3">Submit</button>
+                </form>
+
             </div>
         </div>
     </div>
 
     </div>
-
+   
+    <script src="/javascript/comment.js"></script>
+   
 </article>
