@@ -39,7 +39,7 @@ router.get("/newpost", (req, res) => {
     res.redirect("/");
     return;
   }
-  res.render("newpost");
+ res.render( "newpost", {  loggedIn: req.session.loggedIn});
 });
 
 router.get("/post/:id", (req, res) => {
