@@ -23,7 +23,7 @@ app.use(session(sess))
 app.engine('handlebars', hbs.engine)
 app.set('view engine', 'handlebars')
 
-const PORT =  3001;
+const PORT =  process.env.PORT || 3001;
 
 app.use(express.static(path.join(__dirname, 'public')))
 app.use(express.json());
