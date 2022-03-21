@@ -7,34 +7,38 @@
             </div>
             <div class="container">
                 <div class="row">
-                <div class="card-text col-9">
+                <div class="card-text col-9 border-bottom">
                     {{post.post_content}}
+
                     </div>
                    <div class="card-text col-3">
-                       {{post.user.username}} on {{post.created_at}}
+                       {{post.user.username}} on {{format_date post.created_at}}
                    </div>
-
+                    
                 </div>
                 <div class="card-title">
                 <h4>comments</h4>
                  </div>
                  {{#each post.comments as |comment|}}
-                <div class="card-text">
-                    <p>{{comment_content}}</p>
+                <div class="card-text border-bottom">
+                    <p> {{user.username}} on {{ format_date created_at}} :</p>
+                    <p>{{comment_content}}</p> 
+                    
                 </div>
                 {{/each}}
+                {{#if loggedIn}}
                 <form class = "mt-3 comments">
                     <label for="comment_box" class="form-label"> Post a new comment</label>
                     <textarea class = "form-control" id="comment_box" rows="3"></textarea>
                     <button type="submit" class="btn btn-primary mt-3">Submit</button>
                 </form>
-
+                {{/if}}
             </div>
         </div>
     </div>
 
     </div>
-   
+   {{#if loggedIn}}
     <script src="/javascript/comment.js"></script>
-   
+{{/if}}
 </article>
