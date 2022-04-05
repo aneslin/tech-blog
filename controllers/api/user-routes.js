@@ -69,11 +69,14 @@ router.post("/login", (req, res) => {
 });
 //logout route
 router.post("/logout", (req, res) => {
+  console.log(">>>>>>>", req)
   if (req.session.loggedIn) {
     req.session.destroy(() => {
+      console.log(">>>>>>>>>>>", res)
       res.status(204).end();
     });
   } else {
+    console.log(">>>>>>>>>>>", res)
     res.status(404).end();
   }
 });
