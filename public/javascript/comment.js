@@ -1,3 +1,4 @@
+//post a comment to the database
 async function commentFormHandler(event) {
     console.log("====================goodbye")
     event.preventDefault();

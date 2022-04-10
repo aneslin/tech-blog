@@ -1,7 +1,8 @@
+//edit an existing post from the dashboard page
 async function editFormHandler(event) {
     event.preventDefault();
     const post_title = document.querySelector('input[name="post-title"]').value.trim();
-    const post_content = document.querySelector('input[name="post-content"]').value.trim();
+    const post_content = document.querySelector('textarea[name="post-content"]').value.trim();
     const id = window.location.toString().split('/')[
         window.location.toString().split('/').length - 1
       ];

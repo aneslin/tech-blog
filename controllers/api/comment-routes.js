@@ -1,7 +1,7 @@
 const router = require('express').Router()
 const { Comment } = require('../../models')
 
-
+//api post route to get a new comment from comments.js
 router.post("/", (req, res) => {
     if (req.session) {
         Comment.create({

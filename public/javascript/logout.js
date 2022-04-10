@@ -1,3 +1,4 @@
+//log out from nav bar
 async function logout() {
     console.log(window.location)
     const response = await fetch("/api/users/logout", {

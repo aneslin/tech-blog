@@ -1,3 +1,4 @@
+//sign up from the log in page
 async function signupFormHandler(event) {
     event.preventDefault();
   

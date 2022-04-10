@@ -1,3 +1,4 @@
+//delete a post from the 'edit' page
 async function deleteFormHandler(event) {
     event.preventDefault();
   

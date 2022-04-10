@@ -1,3 +1,4 @@
+//create a new post from the dashboard
 async function postFormHandler(event) {
     event.preventDefault();
   

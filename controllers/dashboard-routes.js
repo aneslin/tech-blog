@@ -2,6 +2,8 @@ const router = require('express').Router()
 const {Post, User} = require('../models')
 const withAuth = require("../utils/auth")
 
+
+//get and render all posts by a user in the dashboard
 router.get('/', withAuth,(req, res) => {
     Post.findAll({
       
@@ -26,7 +28,7 @@ router.get('/', withAuth,(req, res) => {
         res.status(500).json(err);
       });
 })
-
+//edit a single post from the dashboard by id
 router.get("/post-edit/:id", withAuth, (req, res) => {
     Post.findOne({
       where: {

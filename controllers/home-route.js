@@ -1,7 +1,7 @@
 const router = require("express").Router();
 const { Post, User, Comment } = require("../models");
 const withAuth = require("../utils/auth")
-
+//display all posts on the home page
 router.get("/", (req, res) => {
   console.log(req.session);
   Post.findAll({
@@ -19,6 +19,7 @@ router.get("/", (req, res) => {
     });
 });
 
+//render the log in page
 router.get("/login", (req, res) => {
   if (req.session.loggedIn) {
     res.redirect("/");
@@ -26,7 +27,7 @@ router.get("/login", (req, res) => {
   }
   res.render("login");
 });
-
+//render the signup page
 router.get("/signup", (req, res) => {
   if (req.session.loggedIn) {
     res.redirect("/");
@@ -34,7 +35,7 @@ router.get("/signup", (req, res) => {
   }
   res.render("signup");
 });
-
+//render new post
 router.get("/newpost", (req, res) => {
   if (!req.session.loggedIn) {
     res.redirect("/");
