@@ -1,8 +1,24 @@
-<div class="card">
+<article>
+    <div class="card">
         <div class="card-body">
+            
             <div class="card-title">
-                <h4><a href='/post/{{id}}'> {{post_title}} </a></h4>
+              <a href="/post/{{id}}"><h3>  {{post_title}} </a>
             </div>
-            <p>{{post_content}}</p>
-        </div>
-    </div>
+            <div class="container">
+                <div class="row">
+                <div class="card-text col-9 border-bottom">
+                    {{post_content}}
+
+                    </div>
+                   <div class="card-text col-3">
+                       {{user.username}} on {{format_date created_at}}
+                   </div>
+                    
+                </div>
+                
+             
+              </div>
+              </div>
+              </div>
+              </article>

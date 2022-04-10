@@ -1,6 +1,6 @@
 const router = require("express").Router();
 const { Post, User, Comment } = require("../models");
-
+//get one id- used return a single post for single post page
 router.get("/:id", (req, res) => {
   Post.findOne({
     where: {

@@ -1,9 +1,32 @@
-<div>
+<div class="container">
 <h2>Dashboard</h2>
 
 <a href="/newPost" class="btn btn-link btn-warning m-2"> Create New Post</a>
 {{#each  posts as |post|}}
-{{> post-info}}
-<a href="/dashboard/post-edit/{{post.id}}" class="btn btn-link btn-warning m-2">Edit</a>
+<article>
+    <div class="card">
+        <div class="card-body">
+            
+            <div class="card-title">
+              <a href="/post/{{id}}"><h3>  {{post_title}} </a>
+            </div>
+            <div class="container">
+                <div class="row">
+                <div class="card-text col-9 border-bottom">
+                    {{post_content}}
+
+                    </div>
+                   <div class="card-text col-3">
+                       {{user.username}} on {{format_date created_at}}
+                   </div>
+                    
+                </div>
+                
+             <a href="/dashboard/post-edit/{{post.id}}" class="btn btn-link btn-warning m-2">Edit</a>
+              </div>
+              </div>
+              </div>
+              </article>
+
 {{/each}}
 </div>
